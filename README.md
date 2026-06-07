@@ -1,19 +1,15 @@
-# DEMaskNet: A Dual Enhanced Mask Network for Food Semantic Segmentation
+# Intra-Inter Relationship Modeling Network: toward Food Semantic Segmentation in Multi Foreground Scenes
 
 
-This is the official implementation of the paper "[DEMaskNet: A Dual Enhanced Mask Network for Food Semantic Segmentation]". 
+This is the official implementation of the paper "[Intra-Inter Relationship Modeling Network: toward Food Semantic Segmentation in Multi Foreground Scenes]". 
 The source code will be made publicly available upon the paper's acceptance.
 
 ---
 
-We propose the Dual Enhanced Mask Network (DEMaskNet), a novel framework specifically designed for food semantic segmentation. DEMaskNet builds upon existing mask segmentation technologies and introduces two key advancements. First, it enhances boundary delineation during mask proposal generation by integrating enhanced edge information as supervision, enabling accurate segmentation in complex multi-foreground scenes. Second, it refines the classification process by effectively modeling relationships among food items, improving overall segmentation accuracy. Furthermore, an optimized decoder is incorporated to improve inference performance, achieving superior results while reducing computational complexity compared to traditional Transformer-based decoders. 
+We propose the Intra-Inter Relationship Modeling Network (IIRM-Net), a novel framework specifically designed for food semantic segmentation. IIRM-Net builds upon existing mask-based segmentation paradigms and introduces two key advancements. First, it enhances contextual understanding by explicitly modeling intra-category spatial dependencies and inter-category semantic correlations, enabling more coherent predictions in complex multi-foreground food scenes. Specifically, an Adaptive-distance Dependency Block (AdDB) is introduced to capture long-range relationships within each food category while maintaining computational efficiency, and a Category Correlation Modeling (CCM) module is designed to learn co-occurrence patterns among different food categories for improved classification consistency. Second, it improves boundary discrimination through an intra-inter boundary modeling strategy, where instance-wise boundary supervision is combined with enriched inter-object boundary interactions. This is achieved via a Contextual-geometric Boundary Supervision (CgBS) mechanism, which strengthens fine-grained boundary awareness and improves segmentation quality in overlapping or adjacent regions. Overall, these designs allow IIRM-Net to produce more accurate and structurally consistent segmentation results across diverse food scenes while maintaining efficiency.
   <img src="pic/vis.jpg" />
 
-Our DEMaskNet architecture mainly is composed of several comonents: the backbone, the pixel decoder, the Multi-Foreground
- Mask Enhancement (MFME), the Adaptive Long-Range (ALR) Decoder, the Correlation-Aware Classification Enhancement (CACE) and
- the post-rocessing stage. The MFME module is designed to enhance the accuracy of mask proposals, while the CACF module focuses on
- enhancing mask classification accuracy. Furthermore, the ALR Decoder enables the model to effectively capture long-range dependencies,
- contributing to more robust segmentation performance.
+Our IIRM-Net architecture is mainly composed of several components: the backbone, the pixel decoder, the Adaptive-distance Dependency Block (AdDB), the Category Correlation Modeling (CCM) module, the Contextual-geometric Boundary Supervision (CgBS) strategy, and the post-processing stage. The AdDB module is designed to capture long-range intra-category dependencies efficiently, improving spatial consistency within each food instance. The CCM module focuses on modeling inter-category relationships to refine class predictions based on contextual co-occurrence. Furthermore, the CgBS strategy enhances boundary supervision by incorporating both instance-wise boundary prediction and inter-instance geometric interactions, contributing to more precise segmentation in complex and overlapping food regions.
 
   <img src="pic/model.jpg" />
 
