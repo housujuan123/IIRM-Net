@@ -11,7 +11,7 @@ We propose the Intra-Inter Relationship Modeling Network (IIRM-Net), a novel fra
 
 Our IIRM-Net architecture is mainly composed of several components: the backbone, the pixel decoder, the Adaptive-distance Dependency Block (AdDB), the Category Correlation Modeling (CCM) module, the Contextual-geometric Boundary Supervision (CgBS) strategy, and the post-processing stage. The AdDB module is designed to capture long-range intra-category dependencies efficiently, improving spatial consistency within each food instance. The CCM module focuses on modeling inter-category relationships to refine class predictions based on contextual co-occurrence. Furthermore, the CgBS strategy enhances boundary supervision by incorporating both instance-wise boundary prediction and inter-instance geometric interactions, contributing to more precise segmentation in complex and overlapping food regions.
 
-  <img src="pic/model.jpg" />
+  <img src="pic/pic_overall15.pdf" />
 
 ## Installation
 
@@ -68,7 +68,7 @@ python train_net.py --config-file /path/to/config --eval-only MODEL.WEIGHTS /pat
   <tr>
     <td>DEMaskNet</td>
     <td> 52.87</td>
-    <td>86.12</td>
+    <td>86.40</td>
     <td>64.39</td>
     <td>70.12</td>
     <td> 89.78</td>
